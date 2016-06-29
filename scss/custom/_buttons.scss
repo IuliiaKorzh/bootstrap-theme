@@ -1,0 +1,58 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  text-transform: uppercase;
+
+  &:active,
+  &.active {
+    @include box-shadow(inset 0px 2px 1px 0px rgba(0, 0, 0, 0.1));
+  }  
+}
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $btn-default-bg-hover);
+}
+.btn-normal {
+  @include button-variant($btn-normal-color, $btn-normal-bg, $btn-normal-border);
+}
+
+// Alternate dropdown buttons
+// --------------------------------------------------
+
+
+.btn-primary + .dropdown-toggle {
+  @include button-variant($btn-primary-color, $btn-primary-bg, darken($btn-primary-border,10%));
+}
+// Success appears as green
+.btn-success + .dropdown-toggle {
+  @include button-variant($btn-success-color, $btn-success-bg, darken($btn-success-border,10%));
+}
+// Info appears as blue-green
+.btn-info + .dropdown-toggle {
+  @include button-variant($btn-info-color, $btn-info-bg, darken($btn-info-border,10%));
+}
+// Warning appears as orange
+.btn-warning + .dropdown-toggle {
+  @include button-variant($btn-warning-color, $btn-warning-bg, darken($btn-warning-border,10%));
+}
+// Danger and error appear as red
+.btn-danger + .dropdown-toggle {
+  @include button-variant($btn-danger-color, $btn-danger-bg, darken($btn-danger-border,10%));
+}
+
+.btn + .dropdown-toggle {
+  border-top-color: transparent;
+  border-right-color: transparent;   
+  border-bottom-color: transparent;  
+}
+.btn-default + .dropdown-toggle {
+  @include button-variant($btn-default-color, $btn-default-bg, darken($btn-default-border,10%));
+}
